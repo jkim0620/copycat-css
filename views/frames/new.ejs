@@ -5,13 +5,14 @@
   </head>
   <body>
 
-    <h1>Final Project</h1>
+    <h1>Editor</h1>
     <div>
-      <pre id="editor">
-
+      <pre id="html-editor">
       </pre>
-      </div>
     </div>
+
+    <h1>iframe</h1>
+    <iframe id="preview" class="desktop"></iframe>
 
     <!-- Link to Ace Editor -->
     <!-- <script src="../vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script> -->
@@ -21,12 +22,25 @@
     $(document).ready(() => {
       console.log("Welcome to Julia's final project");
 
-      var htmlEditor = ace.edit("editor");
-      htmlEditor.setTheme("ace/theme/monokai");
-      htmlEditor.getSession().setMode("ace/mode/html");
+      let htmlEditor = ace.edit('html-editor');
+      htmlEditor.setTheme('ace/theme/monokai');
+      htmlEditor.getSession().setMode('ace/mode/html');
 
-      htmlEditor.setValue("<h1>Hi!</hi>");
+
+      htmlEditor.setValue('<h1>Hi!</hi>');
       // htmlEditor.clearSelection();
+
+      let $preview = $('#preview');
+      console.log($preview);
+      console.log(htmlEditor.getValue());
+
+      $preview.srcdoc = '<style></style><script><\/script>';
+      $preview.contents().find('body').html(htmlEditor.getValue());
+      // $("#desktop").contents().find("body").html(htmleditor.getValue());
+
+      htmlEditor.on('change', () => {
+        return $preview.contents().find('body').html(htmlEditor.getValue());
+      })
 
     });
 
