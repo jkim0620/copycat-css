@@ -15,6 +15,11 @@ const dir = {
   jquery: path.join(__dirname, 'node_modules/jquery/dist'),
 };
 
+app.use(express.static(dir.public));
+app.use('/vendor/jquery', express.static(dir.jquery));
+
+app.set('view engine', 'ejs');
+
 // start morgan
 app.use(logger(process.env.NODE_ENV === 'production' ? 'common' : 'dev'));
 
@@ -22,7 +27,6 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 app.use(bodyParser.json());
-
 
 // PORT
 const PORT = process.argv[2] || process.env.PORT || 3000;
