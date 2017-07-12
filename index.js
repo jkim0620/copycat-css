@@ -13,10 +13,12 @@ const app = express();
 const dir = {
   public: path.join(__dirname, 'public'),
   jquery: path.join(__dirname, 'node_modules/jquery/dist'),
+  vendor: path.join(__dirname, 'vendor'),
 };
 
 app.use(express.static(dir.public));
 app.use('/vendor/jquery', express.static(dir.jquery));
+app.use(express.static(dir.vendor));
 
 app.set('view engine', 'ejs');
 
