@@ -3,7 +3,7 @@
   <head>
     <%- include ../partials/head.ejs %>
   </head>
-  <body>
+  <body onload="init()">
 
     <div class="container">
 
@@ -19,25 +19,57 @@
       <iframe id="preview" class="frame" src="javascript:;"></iframe>
     </div>
 
+    <button id="saveBtn" type="button" name="button">SAVE</button>
 
-    <!-- Link to Ace Editor -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
 
     <script>
+      // Require firebase
+      let firebasedb = require('firebase');
+
+      // Setting HTML text editor
+      let htmlEditor = ace.edit('html-editor');
+      htmlEditor.setTheme('ace/theme/monokai');
+      htmlEditor.getSession().setMode('ace/mode/html');
+      htmlEditor.setValue('<!-- HTML code goes here -->');
+
+      // Setting CSS text editor
+      let cssEditor = ace.edit('css-editor');
+      cssEditor.setTheme('ace/theme/monokai');
+      cssEditor.getSession().setMode('ace/mode/css');
+      cssEditor.setValue('/* CSS code here */');
+
+      // Initializing Firebase, Ace, and Firepad
+      const init = () => {
+
+        // Initialize Firebase.
+        let config = {
+          apiKey: "AIzaSyCip8dLX1XlkNwKsL7YRXP6THfI4F3Zwgk",
+          authDomain: "ui-app-50173.firebaseapp.com",
+          databaseURL: "https://ui-app-50173.firebaseio.com",
+          projectId: "ui-app-50173",
+          storageBucket: "gs://ui-app-50173.appspot.com",
+          messagingSenderId: "518926407264",
+        };
+        firebase.initializeApp(config);
+
+        // Get Firebase Database reference.
+        let firebaseDbRef = firebase.database().ref();
+        let htmlFirepadRef = firebaseDbRef.child('html');
+        let cssFirepadRef = firebaseDbRef.child('css');
+
+        // // Create Ace editor.
+        // let editor = ace.edit('firepad');
+
+        // Create Firepad.
+        let htmlFirepad = Firepad.fromACE(htmlFirepadRef, htmlEditor);
+
+        let cssFirepad = Firepad.fromACE(cssFirepadRef, cssEditor);
+
+      }
+
       $(document).ready(() => {
+
         console.log("Welcome to Julia's final project");
-
-        // Setting HTML text editor
-        let htmlEditor = ace.edit('html-editor');
-        htmlEditor.setTheme('ace/theme/monokai');
-        htmlEditor.getSession().setMode('ace/mode/html');
-        htmlEditor.setValue('<!-- HTML code here -->');
-
-        // Setting CSS text editor
-        let cssEditor = ace.edit('css-editor');
-        cssEditor.setTheme('ace/theme/monokai');
-        cssEditor.getSession().setMode('ace/mode/css');
-        cssEditor.setValue('/* CSS code here */');
 
         // Setting iframe to preview code
         // Reference: https://subinsb.com/how-to-create-a-html-css-js-code-editor-using-jquery
@@ -52,6 +84,12 @@
         cssEditor.on('change', function() {
           $preview.find('#cssCode').html(cssEditor.getValue());
         })
+
+        $('#saveBtn').on('click', () => {
+          firebase.database().ref().child('html').set("some code");
+          firebase.database().ref().child('css').set(cssEditor.getValue());
+          alert("btn working");
+        });
 
       });
 
