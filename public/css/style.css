@@ -3,14 +3,11 @@ body {
 }
 
 .container {
-  width: 100%;
 }
 
 .editor {
-  width: 50%;
   height: 500px;
   font-size: 17px;
-  float: left;
 }
 
 .frame {

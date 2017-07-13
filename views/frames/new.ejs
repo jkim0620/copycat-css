@@ -5,19 +5,22 @@
   </head>
   <body>
 
-    <h1>Editor</h1>
     <div class="container">
-      <div id="html-editor" class="editor">
+
+      <h1>Editor</h1>
+      <div class="row">
+        <div id="html-editor" class="col-sm-6 editor">
+        </div>
+        <div id="css-editor" class="col-sm-6 editor">
+        </div>
       </div>
-      <div id="css-editor" class="editor">
-      </div>
+
+      <h1>Preview</h1>
+      <iframe id="preview" class="frame" src="javascript:;"></iframe>
     </div>
 
-    <h1>iframe</h1>
-    <iframe id="preview" class="frame" src="javascript:;"></iframe>
 
     <!-- Link to Ace Editor -->
-    <!-- <script src="../vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
 
     <script>
@@ -28,13 +31,13 @@
         let htmlEditor = ace.edit('html-editor');
         htmlEditor.setTheme('ace/theme/monokai');
         htmlEditor.getSession().setMode('ace/mode/html');
-        // htmlEditor.setValue('<h1>Hi!</h1>');
+        htmlEditor.setValue('<!-- HTML code here -->');
 
         // Setting CSS text editor
         let cssEditor = ace.edit('css-editor');
         cssEditor.setTheme('ace/theme/monokai');
         cssEditor.getSession().setMode('ace/mode/css');
-        // cssEditor.setValue('body{color:blue;}');
+        cssEditor.setValue('/* CSS code here */');
 
         // Setting iframe to preview code
         // Reference: https://subinsb.com/how-to-create-a-html-css-js-code-editor-using-jquery
