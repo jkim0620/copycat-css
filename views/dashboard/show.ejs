@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ../partials/head.ejs %>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1>Dashboard</h1>
+
+      <div id="frame-preview" class="frame-preview">
+      </div>
+
+    </div>
+
+    <script>
+      // Require firebase
+      let firebasedb = require('firebase');
+
+      let config = {
+        apiKey: "AIzaSyCip8dLX1XlkNwKsL7YRXP6THfI4F3Zwgk",
+        authDomain: "ui-app-50173.firebaseapp.com",
+        databaseURL: "https://ui-app-50173.firebaseio.com",
+        projectId: "ui-app-50173",
+        storageBucket: "gs://ui-app-50173.appspot.com",
+        messagingSenderId: "518926407264",
+      };
+      firebase.initializeApp(config);
+
+      $(document).ready(() => {
+        console.log('Welcome to dashboard');
+
+        let rootRef = firebase.database().ref().child('frames');
+
+        // Populate dashboard page with all the frames data saved in firebase 
+        rootRef.on('child_added', snap => {
+          let htmlSnap = snap.child('html').val();
+          let cssSnap = snap.child('css').val();
+
+          $('#frame-preview').append('<iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe>');
+
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
