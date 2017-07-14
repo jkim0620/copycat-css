@@ -15,8 +15,6 @@ body {
   height: 300px;
 }
 
-.frame-preview {
-  width: 200px;
-  height: 100px;
+.frames-container, .frame-container {
   border: 2px red solid;
 }

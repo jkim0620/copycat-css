@@ -9,7 +9,7 @@
 
       <h1>Dashboard</h1>
 
-      <div id="frame-container" class="frame-container">
+      <div id="frames-container" class="frames-container">
       </div>
 
     </div>
@@ -41,8 +41,10 @@
           // Get unique keys of each frames
           let frameKey = firebase.database().ref().child('frames').push().getKey();
           console.log(frameKey);
+          // let frameKeyChild = frameKey.snap();
 
           $('#frames-container').append('<a href="/frames/' + frameKey + '"><iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a>');
+
         });
 
       });
