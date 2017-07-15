@@ -1,16 +1,23 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express');
+const frames = express.Router();
 const controller = require('./controller.js');
 
-router.get('/new', controller.indexNew);
+// frames.get('/:id', controller.show);
 
-// router.route('/:id')
+frames.get('/new', controller.indexNew);
+
+frames.route('/:id')
+  .get(controller.show);
+
+
+// frames.route('/:id')
 //   .get(controller.show)
 //   .put(controller.showUpdate)
 //   .delete(controller.destroy);
 //
-// router.route('/')
+// frames.route('/')
 //   .get(controller.index)
 //   .post(controller.create);
 
-module.exports = router;
+module.exports = frames;
+// exports.route = functions.https.onRequest(express);

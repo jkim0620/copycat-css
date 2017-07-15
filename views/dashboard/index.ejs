@@ -40,12 +40,24 @@
 
           // Get unique keys of each frames
           let frameKey = firebase.database().ref().child('frames').push().getKey();
-          console.log(frameKey);
-          // let frameKeyChild = frameKey.snap();
 
-          $('#frames-container').append('<a href="/frames/' + frameKey + '"><iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a>');
+          $('#frames-container').append('<iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe>');
 
         });
+        
+        // let $preview = $('#preview').contents().find('body');
+        // $preview.html('<span id="htmlCode"></span><style id="cssCode"></style>');
+        //
+        // // Whenever code changes in the editor, update iframe preview
+        // htmlEditor.on('change', function() {
+        //   $preview.find('#htmlCode').html(htmlEditor.getValue());
+        // });
+        //
+        // cssEditor.on('change', function() {
+        //   $preview.find('#cssCode').html(cssEditor.getValue());
+        // })
+
+
 
       });
     </script>

@@ -18,3 +18,11 @@ body {
 .frames-container, .frame-container {
   border: 2px red solid;
 }
+/*
+.example-cage {
+  width: 25vw;
+  height: 30vh;
+  object-fit: contain;
+  margin: 0 !important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px #919191; }*/

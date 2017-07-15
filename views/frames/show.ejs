@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ../partials/head.ejs %>
+  </head>
+  <body onload="init()">
+
+    <div class="container">
+
+      <h1>I KNOW</h1>
+
+      <div id="frame-container" class="frame-container">
+        <iframe id="view-iframe"></iframe>
+        <div class="row">
+          <div id="view-html-editor" class="col-sm-6 editor">
+          </div>
+          <div id="view-css-editor" class="col-sm-6 editor">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+    // Require firebase
+    let firebasedb = require('firebase');
+
+    // Setting HTML text editor
+    let htmlEditor = ace.edit('view-html-editor');
+    htmlEditor.setTheme('ace/theme/monokai');
+    htmlEditor.getSession().setMode('ace/mode/html');
+
+    // Setting CSS text editor
+    let cssEditor = ace.edit('view-css-editor');
+    cssEditor.setTheme('ace/theme/monokai');
+    cssEditor.getSession().setMode('ace/mode/css');
+
+    // Initializing Firebase, Ace, and Firepad
+    const init = () => {
+
+      // Initialize Firebase.
+      let config = {
+        apiKey: "AIzaSyCip8dLX1XlkNwKsL7YRXP6THfI4F3Zwgk",
+        authDomain: "ui-app-50173.firebaseapp.com",
+        databaseURL: "https://ui-app-50173.firebaseio.com",
+        projectId: "ui-app-50173",
+        storageBucket: "gs://ui-app-50173.appspot.com",
+        messagingSenderId: "518926407264",
+      };
+      firebase.initializeApp(config);
+
+      // Get Firebase Database reference.
+      let firebaseDbRef = firebase.database().ref();
+      let htmlFirepadRef = firebaseDbRef.child('html');
+      let cssFirepadRef = firebaseDbRef.child('css');
+
+      // Create Firepad.
+      let htmlFirepad = Firepad.fromACE(htmlFirepadRef, htmlEditor);
+
+      let cssFirepad = Firepad.fromACE(cssFirepadRef, cssEditor);
+
+    }
+
+      $(document).ready(() => {
+        console.log('Welcome to dashboard');
+
+        var url = window.location.href;
+        var value = url.substring(url.lastIndexOf('/') + 1);
+        console.log(value);
+
+        firebase.database().ref().child('frames').child(value).once('value', snap => {
+              // $('#frame-container').append( '<iframe srcDoc="' + snap.val().html + '<style>' + snap.val().css + '</style>"' + '</iframe>')
+              // console.log(snap.val());
+              $('#view-iframe').attr('srcdoc', `${snap.val().html} <style> ${snap.val().css} </style>`);
+              $('#view-html-editor').setValue(snap.val().html);
+              $('view-css-editor').setValue(snap.val().css);
+        });
+
+
+
+      });
+    </script>
+
+  </body>
+</html>
