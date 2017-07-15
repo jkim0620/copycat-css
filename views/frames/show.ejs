@@ -10,35 +10,21 @@
       <h1>I KNOW</h1>
 
       <div id="frame-container" class="frame-container">
-        <iframe id="view-iframe"></iframe>
         <div class="row">
           <div id="view-html-editor" class="col-sm-6 editor">
           </div>
           <div id="view-css-editor" class="col-sm-6 editor">
           </div>
         </div>
+        <iframe id="view-iframe"></iframe>
       </div>
 
     </div>
 
     <script>
-    // Require firebase
-    let firebasedb = require('firebase');
+      // Require firebase
+      let firebasedb = require('firebase');
 
-    // Setting HTML text editor
-    let htmlEditor = ace.edit('view-html-editor');
-    htmlEditor.setTheme('ace/theme/monokai');
-    htmlEditor.getSession().setMode('ace/mode/html');
-
-    // Setting CSS text editor
-    let cssEditor = ace.edit('view-css-editor');
-    cssEditor.setTheme('ace/theme/monokai');
-    cssEditor.getSession().setMode('ace/mode/css');
-
-    // Initializing Firebase, Ace, and Firepad
-    const init = () => {
-
-      // Initialize Firebase.
       let config = {
         apiKey: "AIzaSyCip8dLX1XlkNwKsL7YRXP6THfI4F3Zwgk",
         authDomain: "ui-app-50173.firebaseapp.com",
@@ -49,36 +35,30 @@
       };
       firebase.initializeApp(config);
 
-      // Get Firebase Database reference.
-      let firebaseDbRef = firebase.database().ref();
-      let htmlFirepadRef = firebaseDbRef.child('html');
-      let cssFirepadRef = firebaseDbRef.child('css');
+      // Setting HTML text editor
+      let htmlViewEditor = ace.edit('view-html-editor');
+      htmlViewEditor.setTheme('ace/theme/monokai');
+      htmlViewEditor.getSession().setMode('ace/mode/html');
 
-      // Create Firepad.
-      let htmlFirepad = Firepad.fromACE(htmlFirepadRef, htmlEditor);
+      // Setting CSS text editor
+      let cssViewEditor = ace.edit('view-css-editor');
+      cssViewEditor.setTheme('ace/theme/monokai');
+      cssViewEditor.getSession().setMode('ace/mode/css');
 
-      let cssFirepad = Firepad.fromACE(cssFirepadRef, cssEditor);
+      // Get the last parameter of url
+      let url = window.location.href;
+      let params = url.substring(url.lastIndexOf('/') + 1);
 
-    }
+      console.log('Welcome to Single View');
 
-      $(document).ready(() => {
-        console.log('Welcome to dashboard');
+      console.log(params);
 
-        var url = window.location.href;
-        var value = url.substring(url.lastIndexOf('/') + 1);
-        console.log(value);
-
-        firebase.database().ref().child('frames').child(value).once('value', snap => {
-              // $('#frame-container').append( '<iframe srcDoc="' + snap.val().html + '<style>' + snap.val().css + '</style>"' + '</iframe>')
-              // console.log(snap.val());
-              $('#view-iframe').attr('srcdoc', `${snap.val().html} <style> ${snap.val().css} </style>`);
-              $('#view-html-editor').setValue(snap.val().html);
-              $('view-css-editor').setValue(snap.val().css);
-        });
-
-
-
+      firebase.database().ref().child('frames').child(params).once('value', snap => {
+        $('#view-iframe').attr('srcdoc', `${snap.val().html} <style> ${snap.val().css} </style>`);
+        htmlViewEditor.setValue(snap.val().html);
+        cssViewEditor.setValue(snap.val().css);
       });
+
     </script>
 
   </body>
