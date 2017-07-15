@@ -38,26 +38,12 @@
           let htmlSnap = snap.child('html').val();
           let cssSnap = snap.child('css').val();
 
-          // Get unique keys of each frames
-          let frameKey = firebase.database().ref().child('frames').push().getKey();
+          // Get unique key of each frame
+          let key = snap.key;
 
-          $('#frames-container').append('<iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe>');
+          $('#frames-container').append('<a href="/frames/' + key + '"><iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a>');
 
         });
-        
-        // let $preview = $('#preview').contents().find('body');
-        // $preview.html('<span id="htmlCode"></span><style id="cssCode"></style>');
-        //
-        // // Whenever code changes in the editor, update iframe preview
-        // htmlEditor.on('change', function() {
-        //   $preview.find('#htmlCode').html(htmlEditor.getValue());
-        // });
-        //
-        // cssEditor.on('change', function() {
-        //   $preview.find('#cssCode').html(cssEditor.getValue());
-        // })
-
-
 
       });
     </script>
