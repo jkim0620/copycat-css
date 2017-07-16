@@ -23,6 +23,12 @@
 
         <div class="row">
           <div id="frames-container" class="frames-container">
+            <!-- <div class="col-sm-4">
+              <a class="linkwrap">
+                <div class="frame-overlay"></div>
+                <iframe id="dashboard-iframe" class="iframe-thumbnail"></iframe>
+              </a>
+            </div> -->
           </div>
         </div>
 
@@ -56,8 +62,31 @@
           // Get unique key of each frame
           let key = snap.key;
 
+          // `<div class="col-sm-4"><a class="linkwrap" href=${link}><div class="frame-overlay"></div><iframe class="iframe-thumbnail" srcdoc=${srcDoc}></iframe></a></div>`
+
           $('#frames-container').append('<div class="col-sm-4"><a class="linkwrap" href="/frames/' + key + '"><div class="frame-overlay"></div><iframe class="iframe-thumbnail" src="\n<style>\n\n</style>\n<script>\n<\n\/script>" srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a></div>');
+
         });
+
+        // rootRef.on('value', framesData);
+        //
+        // function framesData(data) {
+        //   let frames = data.val();
+        //   let keys = Object.keys(frames);
+        //   console.log(keys);
+        //
+        //   for (let i = 0; i < keys.length; i++) {
+        //     let k = keys[i];
+        //     let htmlCode = frames[k].html;
+        //     let cssCode = frames[k].css;
+        //     console.log(htmlCode);
+        //
+        //     $('#frames-container').append(`<iframe class="iframe-thumbnail" srcdoc="${htmlCode}<style>${cssCode}</style>"></iframe>`);
+        //     // $('.iframe-thumbnail').attr('srcdoc', `${htmlCode}<style>${cssCode}</style>`);
+        //   }
+        //
+        // }
+
 
       });
     </script>

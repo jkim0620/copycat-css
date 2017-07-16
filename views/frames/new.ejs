@@ -118,7 +118,8 @@
           let updates = {};
           updates['/frames/' + newFrameKey] = frameData;
 
-          return firebase.database().ref().update(updates);
+          // Save new frame with unique key to firebase db and redirect to home page
+          return firebase.database().ref().update(updates).then(() => {window.location = '/dashboard'});
         });
 
 
