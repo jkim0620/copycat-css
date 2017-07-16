@@ -1,7 +1,6 @@
 {
-  "name": "ecommerce_app_node",
+  "name": "app_node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +18,16 @@
     "jquery": "^3.2.1",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
-    "path": "^0.12.7"
-  }
+    "path": "^0.12.7",
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkim0620/final-project-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkim0620/final-project-node/issues"
+  },
+  "homepage": "https://github.com/jkim0620/final-project-node#readme",
+  "description": ""
 }

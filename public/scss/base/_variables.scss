@@ -12,9 +12,10 @@ $light-gray: #6d7271;
 $mid-gray: #232323;
 $deep-gray: #1b1d21;
 $shadow: #c4c2c2;
-$editor-bg-gray: #1f232d;
+$editor-bg-gray: #1e2430;
 
 $red: #fc0043;
+$orange: #f96d4d;
 $neon-yellow: #eaff0a;
 
 $pastel-red: #F7987C;
@@ -39,10 +40,13 @@ Base Font
 $base-font-size: 15px;
 $bold-font-size: 17px;
 
-$font-h: "Baloo", "Avenir", "sans-serif";
-$font-p: "Comfortaa",  "Avenir", "sans-serif";
-
 $default-font-family: "Avenir", "Helvetica", "sans-serif";
 
+$font-choice-1: "Poppins", "sans-serif";
+// $font-choice-2: "Questrial", "sans-serif";
+// $font-choice-3: "Days One", "sans-serif";
+$font-choice-4: "Quicksand", "sans-serif";
+// $font-choice-5: "Rubik", "sans-serif";
+
 // Main Font
-$primary-font-family: "Avenir";
+$primary-font-family: $font-choice-4;

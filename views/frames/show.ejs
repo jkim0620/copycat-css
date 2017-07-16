@@ -5,18 +5,22 @@
   </head>
   <body>
 
-    <div class="container">
+    <div class="container-fluid">
 
-      <h1>I KNOW</h1>
+      <!-- <h1>I KNOW</h1> -->
+      <iframe id="view-iframe" class="iframe-live"></iframe>
 
-      <div id="frame-container" class="frame-container">
-        <div class="row">
-          <div id="view-html-editor" class="col-sm-6 editor">
-          </div>
-          <div id="view-css-editor" class="col-sm-6 editor">
-          </div>
+
+      <div class="row">
+        <div class="editor-nav">
+          <ul>
+            <li class="editor-nav-li">EXPORT</li>
+          </ul>
         </div>
-        <iframe id="view-iframe"></iframe>
+        <div id="view-html-editor" class="col-sm-6 editor">
+        </div>
+        <div id="view-css-editor" class="col-sm-6 editor">
+        </div>
       </div>
 
     </div>
@@ -37,12 +41,12 @@
 
       // Setting HTML text editor
       let htmlViewEditor = ace.edit('view-html-editor');
-      htmlViewEditor.setTheme('ace/theme/monokai');
+      htmlViewEditor.setTheme('ace/theme/twilight');
       htmlViewEditor.getSession().setMode('ace/mode/html');
 
       // Setting CSS text editor
       let cssViewEditor = ace.edit('view-css-editor');
-      cssViewEditor.setTheme('ace/theme/monokai');
+      cssViewEditor.setTheme('ace/theme/twilight');
       cssViewEditor.getSession().setMode('ace/mode/css');
 
       // Get the last parameter of url

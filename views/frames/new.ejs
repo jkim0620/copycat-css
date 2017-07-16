@@ -5,21 +5,29 @@
   </head>
   <body onload="init()">
 
-    <div class="container">
+    <div class="container-fluid">
 
-      <h1>Editor</h1>
+      <!-- <h1>Preview</h1> -->
+      <iframe id="preview" class="iframe-live" src="javascript:;"></iframe>
+
       <div class="row">
-        <div id="html-editor" class="col-sm-6 editor">
+        <!-- Editor nav bar -->
+        <div class="editor-nav">
+          <ul>
+            <li class="editor-nav-li"><button id="saveBtn" class="save-btn" type="button" name="button">SAVE</button></li>
+            <li class="editor-nav-li">EXPORT</li>
+          </ul>
         </div>
-        <div id="css-editor" class="col-sm-6 editor">
+
+        <div id="html-editor" class="col-sm-6 editor editor-html">
         </div>
-      </div>
+        <div id="css-editor" class="col-sm-6 editor editor-css">
+        </div>
 
-      <h1>Preview</h1>
-      <iframe id="preview" class="frame" src="javascript:;"></iframe>
-    </div>
+      </div> <!-- /row -->
+    </div> <!-- /container-fluid -->
 
-    <button id="saveBtn" type="button" name="button">SAVE</button>
+    <!-- <button id="saveBtn" type="button" name="button">SAVE</button> -->
 
 
     <script>
@@ -84,6 +92,14 @@
         cssEditor.on('change', function() {
           $preview.find('#cssCode').html(cssEditor.getValue());
         })
+      //
+      //   $('#editor-tabs a').on(click, (e => {
+      //     e.preventDefault();
+      //     // $(this).tab('show');
+      //     $('#editor-tabs a:first').tab('show');
+      //     $('#editor-tabs a:last').tab('show');
+      //   })
+      // );
 
         // On click on save button new code gets saved to firebase db
         $('#saveBtn').on('click', (html, css) => {

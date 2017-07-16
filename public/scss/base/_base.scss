@@ -1,4 +1,19 @@
 body {
   font-family: $primary-font-family;
   font-size: $base-font-size;
+  color: $black;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+a {
+  color: none;
+  text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0;
 }

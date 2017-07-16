@@ -9,19 +9,106 @@ Base Font
 =======================
 */
 body {
-  font-family: "Avenir";
-  font-size: 15px; }
+  font-family: "Quicksand", "sans-serif";
+  font-size: 15px;
+  color: #0b0b0b; }
+
+h1 {
+  font-size: 60px;
+  font-weight: bold; }
+
+a {
+  color: none;
+  text-decoration: none; }
+
+.container-fluid {
+  padding: 0; }
+
+.content-section {
+  background: #1e2430;
+  z-index: -10; }
+
+.frames-container {
+  padding: 30px; }
+
+.header-section {
+  background: #f96d4d;
+  font-family: "Quicksand", "sans-serif";
+  color: #1e2430;
+  width: 100%; }
+
+.header-container {
+  width: 100%;
+  height: 700px; }
+  .header-container h1 {
+    font-weight: bolder;
+    margin-top: 0;
+    margin-left: 30%;
+    padding-top: 200px; }
+  .header-container p {
+    font-size: 1.3em;
+    margin: 50px 20%;
+    color: #ffffff;
+    text-align: justify; }
+
+.save-btn {
+  border: none;
+  background: #f96d4d;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 7px 18px; }
 
 .editor {
-  height: 500px;
-  font-size: 17px;
-  font-family: "Avenir", "Helvetica", "sans-serif"; }
+  height: 350px;
+  font-size: 15px;
+  margin-top: -10px; }
 
-.frame {
+.editor-html {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
+
+.editor-css {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.editor-nav {
+  background: #1e2430;
+  color: #ffffff;
+  padding: 15px 50px 25px 50px;
+  margin-top: -10px;
+  overflow: auto; }
+  .editor-nav .editor-nav-li {
+    display: inline;
+    margin-right: 30px;
+    float: right; }
+
+.iframe-live {
   width: 100%;
-  height: 300px; }
+  height: 60vh;
+  border: none; }
 
-.frames-container, .frame-container {
-  border: 2px red solid; }
+.iframe-thumbnail {
+  width: 320px;
+  height: 240px;
+  margin: 15px;
+  margin-top: 50px;
+  border-radius: 4px;
+  border: none;
+  padding: 0;
+  background: white; }
+
+.linkwrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block; }
+  .linkwrap iframe {
+    z-index: 1; }
+
+.frame-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2; }
 
 /*# sourceMappingURL=style.css.map */

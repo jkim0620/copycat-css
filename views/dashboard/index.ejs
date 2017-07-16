@@ -2,17 +2,32 @@
 <html>
   <head>
     <%- include ../partials/head.ejs %>
+    <script src="/js/app.js"></script>
   </head>
   <body>
 
-    <div class="container">
-
-      <h1>Dashboard</h1>
-
-      <div id="frames-container" class="frames-container">
+    <section class="header-section">
+      <div class="header-container">
+        <!-- <h1>UI App</h1> -->
+        <h1>We Design UI For U</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
       </div>
+    </section>
 
-    </div>
+    <section class="content-section">
+      <div class="container content-container">
+
+        <h1>Dashboard</h1>
+
+        <div class="row">
+          <div id="frames-container" class="frames-container">
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <script>
       // Require firebase
@@ -41,8 +56,7 @@
           // Get unique key of each frame
           let key = snap.key;
 
-          $('#frames-container').append('<a href="/frames/' + key + '"><iframe srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a>');
-
+          $('#frames-container').append('<div class="col-sm-4"><a class="linkwrap" href="/frames/' + key + '"><div class="frame-overlay"></div><iframe class="iframe-thumbnail" src="\n<style>\n\n</style>\n<script>\n<\n\/script>" srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a></div>');
         });
 
       });
