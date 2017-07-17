@@ -1,4 +1,4 @@
-.save-btn, .export-btn {
+.save-btn, .export-btn, .main-new-btn, .new-btn, .link-btn, .main-home-btn {
   border: none;
   background: $white;
   color: $blue;
@@ -8,6 +8,34 @@
   float: left;
   margin-left: 30px;
   margin-top: 20px;
+}
+
+.main-new-btn {
+  background: transparent;
+  color: $dove;
+  border: $dove 3px solid;
+  float: none;
+  width: 70px;
+  height: 35px;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.main-home-btn {
+  border: $dove 3px solid;
+  background: $dove;
+  color: $blue;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 13px;
+}
+
+.main-new-btn:hover {
+  background: $dove;
+  color: $blue;
+  font-weight: bold;
 }
 
 .home-btn {
@@ -21,4 +49,18 @@
   float: left;
   margin-left: 60px;
   margin-top: 20px;
+}
+
+.link-btn {
+  // float: right;
+  // margin-top: 150px;
+  // margin-right: 180px;
+  background: $blue;
+  // border-color: $vivid-orange;
+  color: $white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-left: 45%;
+  // margin-top: 2px;
 }

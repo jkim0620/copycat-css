@@ -10,35 +10,41 @@
       <div class="header-container">
         <!-- <h1>UI App</h1> -->
         <h1>We Design <span class="pink-font">UI</span> For U</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        <!-- <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci ea commodo consequat. Duis aute irure dolor in reprehend nulla pariatur.
+        </p> -->
+        <div class="git-box">
+          <img class="gif" src="http://static.elmeme.me/static/uploads/images/2015/01/75131/75297_subitem_full.gif" />
+        </div>
+      </div>
+    </section>
+
+    <section class="nav-section">
+      <div class="nav-container">
+        <ul>
+          <li><a href="/dashboard"><i class="main-home-btn fa fa-code" aria-hidden="true"></i></a></li>
+          <li><a href="/frames/new"><button class="main-new-btn" type="button" name="button">CREATE</button></a></li>
+        </ul>
       </div>
     </section>
 
     <section class="content-section">
       <div class="container content-container">
 
-        <h1>Dashboard</h1>
+        <!-- <h1>Dashboard</h1> -->
 
         <div class="row">
           <div id="frames-container" class="frames-container">
-            <!-- <div class="col-sm-4">
-              <a class="linkwrap">
-                <div class="frame-overlay"></div>
-                <iframe id="dashboard-iframe" class="iframe-thumbnail"></iframe>
-              </a>
-            </div> -->
+
           </div>
         </div>
 
-
       </div>
     </section>
-    
+
     <section class="footer-section">
       <div class="footer-container">
-        Julia
+        <i class="fa fa-copyright" aria-hidden="true"></i> Julia Kim
       </div>
     </section>
 
@@ -61,38 +67,55 @@
 
         let rootRef = firebase.database().ref().child('frames');
 
-        // Populate dashboard page with all the frames data saved in firebase
-        rootRef.on('child_added', snap => {
-          let htmlSnap = snap.child('html').val();
-          let cssSnap = snap.child('css').val();
-
-          // Get unique key of each frame
-          let key = snap.key;
-
-          // `<div class="col-sm-4"><a class="linkwrap" href=${link}><div class="frame-overlay"></div><iframe class="iframe-thumbnail" srcdoc=${srcDoc}></iframe></a></div>`
-
-          $('#frames-container').append('<div class="col-sm-4"><a class="linkwrap" href="/frames/' + key + '"><div class="frame-overlay"></div><iframe class="iframe-thumbnail" src="\n<style>\n\n</style>\n<script>\n<\n\/script>" srcDoc="' + htmlSnap + '<style>' + cssSnap + '</style>"' + '</iframe></a></div>');
-
-        });
-
-        // rootRef.on('value', framesData);
+        // var ifr = document.createElement("iframe");
+        // var content = '<html><head><link rel="stylesheet" href="http://bocoup.com/css/base.css" type="text/css" media="screen, projection" /></head><body>Hello, <b>world</b></body></html>';
         //
-        // function framesData(data) {
-        //   let frames = data.val();
-        //   let keys = Object.keys(frames);
-        //   console.log(keys);
-        //
-        //   for (let i = 0; i < keys.length; i++) {
-        //     let k = keys[i];
-        //     let htmlCode = frames[k].html;
-        //     let cssCode = frames[k].css;
-        //     console.log(htmlCode);
-        //
-        //     $('#frames-container').append(`<iframe class="iframe-thumbnail" srcdoc="${htmlCode}<style>${cssCode}</style>"></iframe>`);
-        //     // $('.iframe-thumbnail').attr('srcdoc', `${htmlCode}<style>${cssCode}</style>`);
-        //   }
-        //
+        // function srcDoc( iframe, content ) {
+        //     if ("srcdoc" in ifr) {
+        //         iframe.setAttribute("srcdoc", content);
+        //         alert("cool");
+        //     } else {
+        //         iframe.setAttribute("src", "javascript: '" + content + "'");
+        //     }
         // }
+        //
+        // srcDoc(ifr, content);
+        // document.body.appendChild(ifr);
+
+
+        // Populate dashboard page with all the frames data saved in firebase
+        rootRef.on('value', framesData);
+
+        function framesData(data) {
+          let frames = data.val();
+          let keys = Object.keys(frames);
+          // console.log(keys);
+
+          // let theIframe;
+
+          for (let i = 0; i < keys.length; i++) {
+            let k = keys[i];
+            console.log(k);
+            let htmlCode = frames[k].html;
+            let cssCode = frames[k].css;
+            // console.log(htmlCode);
+
+            let newIframe = document.createElement('iframe');
+            let newSrcDoc = `${htmlCode}<style>${cssCode}</style>`;
+
+            function createSrcDoc (iframe, content) {
+              iframe.setAttribute('srcdoc', content);
+            }
+
+            createSrcDoc(newIframe, newSrcDoc);
+
+            $('#frames-container').append(newIframe).append('<div class="desc"><h2>TEST!</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><a href="/frames/' + k + '"><button class="link-btn">GO <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a></div>')
+            // ('<a href="/frames/' + k + '"><button class="link-btn">GO <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>');
+            $('iframe').addClass('iframe-thumbnail');
+          }
+        }
+
+
 
 
       });

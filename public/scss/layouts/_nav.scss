@@ -1,0 +1,22 @@
+.nav-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px 0 8px 0;
+  background: $blue;
+  box-shadow: 2px 2px 8px $editor-bg-gray;
+  li {
+    display: inline;
+    margin: 10px;
+  }
+  button {
+    margin: 0;
+    margin-left: 80%;
+  }
+  i {
+    margin: 0;
+    margin-left: 20px;
+  }
+}
