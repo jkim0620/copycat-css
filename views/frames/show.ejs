@@ -7,19 +7,24 @@
 
     <div class="container-fluid">
 
-      <!-- <h1>I KNOW</h1> -->
-      <iframe id="view-iframe" class="iframe-live"></iframe>
-
-
-      <div class="row">
-        <div class="editor-nav">
+      <div class="row editor-container">
+        <!-- <div class="editor-nav">
           <ul>
             <li class="editor-nav-li">EXPORT</li>
           </ul>
+        </div> -->
+        <div class="col-sm-8 iframe-container">
+          <a href="/dashboard"><i class="home-btn fa fa-2x fa-code" aria-hidden="true"></i></a>
+          <button id="exportBtn" class="export-btn" type="button" name="button"><i class="fa fa-download" aria-hidden="true"></i> EXPORT</button>
+          <div class="iframe-bg">
+            <iframe id="view-iframe" class="iframe-live"></iframe>
+          </div>
         </div>
-        <div id="view-html-editor" class="col-sm-6 editor">
-        </div>
-        <div id="view-css-editor" class="col-sm-6 editor">
+        <div class="col-sm-4">
+          <div id="view-html-editor" class="editor editor-html">
+          </div>
+          <div id="view-css-editor" class="editor editor-css">
+          </div>
         </div>
       </div>
 

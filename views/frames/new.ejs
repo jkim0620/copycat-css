@@ -8,20 +8,29 @@
     <div class="container-fluid">
 
       <!-- <h1>Preview</h1> -->
-      <iframe id="preview" class="iframe-live" src="javascript:;"></iframe>
 
-      <div class="row">
+      <div class="row editor-container">
         <!-- Editor nav bar -->
-        <div class="editor-nav">
+        <!-- <div class="editor-nav col-sm-8">
           <ul>
             <li class="editor-nav-li"><button id="saveBtn" class="save-btn" type="button" name="button">SAVE</button></li>
-            <li class="editor-nav-li">EXPORT</li>
+            <li class="editor-nav-li"><button id="exportBtn" class="export-btn" type="button" name="button">EXPORT</button></li>
           </ul>
+        </div> -->
+        <div class="col-sm-8 iframe-container">
+          <a href="/dashboard"><i class="home-btn fa fa-2x fa-code" aria-hidden="true"></i></a>
+          <button id="exportBtn" class="export-btn" type="button" name="button"><i class="fa fa-download" aria-hidden="true"></i> EXPORT</button>
+          <button id="saveBtn" class="save-btn" type="button" name="button"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> POST</button>
+          <div class="iframe-bg">
+            <iframe id="preview" class="iframe-live"></iframe>
+          </div>
         </div>
 
-        <div id="html-editor" class="col-sm-6 editor editor-html">
-        </div>
-        <div id="css-editor" class="col-sm-6 editor editor-css">
+        <div class="col-sm-4">
+          <div id="html-editor" class="editor editor-html">
+          </div>
+          <div id="css-editor" class="editor editor-css">
+          </div>
         </div>
 
       </div> <!-- /row -->
@@ -100,6 +109,34 @@
       //     $('#editor-tabs a:last').tab('show');
       //   })
       // );
+
+        //helper function to create file download
+        function download(data, filename, type) {
+            let a = document.createElement("a"),
+                file = new Blob([data], {
+                    type: type
+                });
+            if (window.navigator.msSaveOrOpenBlob) // IE10+
+                window.navigator.msSaveOrOpenBlob(file, filename);
+            else { // Others
+                let url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+        }
+
+        //export all the code into a document for the user
+        $('#exportBtn').click(() => {
+          let code = htmlEditor.getValue() + "\n<style>\n" + cssEditor.getValue() + "\n</style>";
+          download(code, 'uicode.txt', 'text/plain')
+        });
+
 
         // On click on save button new code gets saved to firebase db
         $('#saveBtn').on('click', (html, css) => {

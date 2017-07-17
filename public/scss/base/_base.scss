@@ -1,5 +1,6 @@
 body {
   font-family: $primary-font-family;
+  // font-family: $default-font-family;
   font-size: $base-font-size;
   color: $black;
 }
@@ -16,4 +17,9 @@ a {
 
 .container-fluid {
   padding: 0;
+}
+
+.resize {
+  resize: vertical;
+  overflow: auto;
 }
