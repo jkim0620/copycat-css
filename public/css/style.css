@@ -44,7 +44,6 @@ a:hover {
   color: #42f4ce; }
 
 .content-section {
-  background: #ffffff;
   background: #1e2430;
   z-index: -10; }
   .content-section h1 {
@@ -65,20 +64,21 @@ a:hover {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   color: white;
-  padding: 30px 60px 50px 60px;
+  padding: 10px 60px 10px 60px;
   text-align: justify;
-  margin-top: -10px; }
+  margin-top: -10px;
+  margin-bottom: 50px; }
   .desc h2 {
     color: #1e2430;
     font-weight: 600; }
 
 .footer-section {
   width: 100%;
-  background: #1e2430; }
+  background: linear-gradient(180deg, #1e2430, #303a4c); }
 
 .footer-container {
-  padding-top: 200px;
-  height: 250px;
+  padding-top: 320px;
+  height: 400px;
   text-align: center;
   color: #ffffff; }
 
@@ -88,7 +88,7 @@ a:hover {
   width: 100%; }
 
 .header-container {
-  height: 700px;
+  height: 800px;
   text-align: center;
   padding-top: 200px;
   margin: 0 auto; }
@@ -136,7 +136,8 @@ a:hover {
   height: auto;
   padding: 10px 0 8px 0;
   background: #0283ce;
-  box-shadow: 2px 2px 8px #1e2430; }
+  box-shadow: 2px 2px 8px #1e2430;
+  z-index: 1000; }
   .nav-section ul {
     margin: 0; }
   .nav-section li {
@@ -149,7 +150,7 @@ a:hover {
     margin: 0;
     margin-left: 20px; }
 
-.save-btn, .export-btn, .new-btn, .link-btn, .modal-btn {
+.save-btn, .export-btn, .new-btn, .go-btn, .modal-btn {
   border: none;
   background: #ffffff;
   color: #0283ce;
@@ -210,7 +211,7 @@ a:hover {
   color: #0283ce;
   font-weight: bold; }
 
-.main-home-btn:hover, .home-btn:hover, .link-btn:hover {
+.main-home-btn:hover, .home-btn:hover {
   border-color: #42f4ce;
   background: #42f4ce; }
 
@@ -225,13 +226,28 @@ a:hover {
   margin-left: 60px;
   margin-top: 20px; }
 
-.link-btn {
-  background: #0283ce;
-  color: #ffffff;
+.rotate-box {
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background: #d9d9d9;
+  margin-left: 80%;
+  z-index: 1; }
+
+.go-btn {
+  background: #d9d9d9;
+  border-color: #d9d9d9;
+  color: #1e2430;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  margin-left: 45%; }
+  margin-top: -30px; }
+  .go-btn i {
+    transform: rotate(-45deg);
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 1.5em; }
+  .go-btn:hover i {
+    color: #0283ce; }
 
 .editor-container .col-sm-4 {
   padding: 0; }
@@ -278,7 +294,7 @@ a:hover {
 
 .iframe-thumbnail {
   width: 100%;
-  height: 240px;
+  height: 330px;
   margin-top: 50px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;

@@ -1,12 +1,13 @@
 .footer-section {
   width: 100%;
-  background: $editor-bg-gray;
+  // background: $editor-bg-gray;
+  background: linear-gradient(180deg, $editor-bg-gray, $editor-bg-gray-shadow);
   // margin-top: 150px;
 }
 
 .footer-container {
-  padding-top: 200px;
-  height: 250px;
+  padding-top: 320px;
+  height: 400px;
   text-align: center;
   color: $white;
 }

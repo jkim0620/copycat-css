@@ -111,7 +111,7 @@
 
             createSrcDoc(newIframe, newSrcDoc);
 
-            $('#frames-container').append(newIframe).append('<div class="desc"><h2>' + frameTitle + '</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><a href="/frames/' + k + '"><button class="link-btn">GO <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a></div>')
+            $('#frames-container').append(newIframe).append('<div class="desc"><h2>' + frameTitle + '</h2><a href="/frames/' + k + '"><div class="rotate-box"><button class="go-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></div></a></div>')
             // ('<a href="/frames/' + k + '"><button class="link-btn">GO <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>');
             $('iframe').addClass('iframe-thumbnail');
           }
