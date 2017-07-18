@@ -9,6 +9,7 @@ Base Font
 =======================
 */
 body {
+  font-family: "Raleway", sans-serif;
   font-size: 15px;
   color: #0b0b0b; }
 
@@ -36,19 +37,18 @@ a:hover {
 .container-fluid {
   padding: 0; }
 
-.resize {
-  resize: vertical;
-  overflow: auto; }
+.blue-font {
+  color: #0283ce; }
 
-.pink-font {
-  color: #2744e8; }
+.green-font {
+  color: #42f4ce; }
 
 .content-section {
   background: #ffffff;
   background: #1e2430;
   z-index: -10; }
   .content-section h1 {
-    color: #2744e8; }
+    color: #0283ce; }
 
 .content-container {
   width: 100%; }
@@ -66,9 +66,11 @@ a:hover {
   border-bottom-left-radius: 4px;
   color: white;
   padding: 30px 60px 50px 60px;
-  z-index: 1000;
   text-align: justify;
   margin-top: -10px; }
+  .desc h2 {
+    color: #1e2430;
+    font-weight: 600; }
 
 .footer-section {
   width: 100%;
@@ -86,26 +88,45 @@ a:hover {
   width: 100%; }
 
 .header-container {
-  width: 100%;
-  height: 700px; }
-  .header-container h1 {
-    font-weight: bolder;
-    margin-top: 0;
-    margin-left: 30%;
-    padding-top: 200px; }
+  height: 700px;
+  text-align: center;
+  padding-top: 200px;
+  margin: 0 auto; }
   .header-container p {
     font-size: 1.4em;
     margin: 50px 20%;
     font-weight: 300;
-    color: #2744e8;
+    color: #0283ce;
     text-align: justify; }
 
-.gif-box {
-  margin: 0 auto;
-  text-align: center; }
+.type-writer {
+  display: flex; }
+  .type-writer h1 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid #42f4ce;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 2.5s steps(44, end), blink-caret 0.75s step-end infinite;
+    font-weight: bolder; }
 
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 35%; } }
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; }
+  50% {
+    border-color: #42f4ce; } }
 .gif {
-  margin-left: 20%; }
+  margin-top: 80px; }
 
 .nav-section {
   position: fixed;
@@ -114,8 +135,10 @@ a:hover {
   width: 100%;
   height: auto;
   padding: 10px 0 8px 0;
-  background: #2744e8;
+  background: #0283ce;
   box-shadow: 2px 2px 8px #1e2430; }
+  .nav-section ul {
+    margin: 0; }
   .nav-section li {
     display: inline;
     margin: 10px; }
@@ -126,46 +149,75 @@ a:hover {
     margin: 0;
     margin-left: 20px; }
 
-.save-btn, .export-btn, .main-new-btn, .new-btn, .link-btn, .main-home-btn {
+.save-btn, .export-btn, .new-btn, .link-btn, .modal-btn {
   border: none;
   background: #ffffff;
-  color: #2744e8;
-  border: #2744e8 3px solid;
+  color: #0283ce;
+  border: #0283ce 3px solid;
   border-radius: 4px;
   padding: 7px 12px;
   float: left;
   margin-left: 30px;
   margin-top: 20px; }
 
+.save-btn:hover, .export-btn:hover, .new-btn:hover, .modal-btn:hover {
+  background: #0283ce;
+  color: #ffffff; }
+
+.save-btn {
+  float: none; }
+
+.close-btn {
+  position: relative;
+  top: -50px;
+  left: 57%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: #0283ce;
+  color: #ffffff;
+  font-family: "Quicksand", "sans-serif";
+  font-size: 20px;
+  font-weight: bold; }
+
 .main-new-btn {
   background: transparent;
   color: #d9d9d9;
   border: #d9d9d9 3px solid;
   float: none;
-  width: 70px;
+  width: auto;
   height: 35px;
   font-size: 12px;
   padding: 3px 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  letter-spacing: 2px; }
 
 .main-home-btn {
   border: #d9d9d9 3px solid;
   background: #d9d9d9;
-  color: #2744e8;
-  width: 40px;
-  height: 40px;
+  color: #0283ce;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  font-size: 13px; }
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  margin-top: -7px; }
 
 .main-new-btn:hover {
   background: #d9d9d9;
-  color: #2744e8;
+  color: #0283ce;
   font-weight: bold; }
 
+.main-home-btn:hover, .home-btn:hover, .link-btn:hover {
+  border-color: #42f4ce;
+  background: #42f4ce; }
+
 .home-btn {
-  background: #2744e8;
+  background: #0283ce;
   color: #ffffff;
-  border: #2744e8 3px solid;
+  border: #0283ce 3px solid;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -174,7 +226,7 @@ a:hover {
   margin-top: 20px; }
 
 .link-btn {
-  background: #2744e8;
+  background: #0283ce;
   color: #ffffff;
   width: 70px;
   height: 70px;
@@ -235,5 +287,38 @@ a:hover {
   background: white;
   overflow: scroll;
   display: inline; }
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 200px;
+  z-index: 1000;
+  display: none; }
+
+.modal-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  height: auto;
+  background: #1e2430;
+  padding: 30px 30px 60px 30px;
+  border-radius: 10px; }
+  .modal-container h2 {
+    color: #42f4ce;
+    margin-top: 0; }
+
+#cursor {
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+.title-input {
+  width: 200px;
+  padding: 10px;
+  border: #d9d9d9 2px solid;
+  border-radius: 4px; }
 
 /*# sourceMappingURL=style.css.map */

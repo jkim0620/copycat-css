@@ -7,6 +7,9 @@
   padding: 10px 0 8px 0;
   background: $blue;
   box-shadow: 2px 2px 8px $editor-bg-gray;
+  ul {
+    margin: 0;
+  }
   li {
     display: inline;
     margin: 10px;
