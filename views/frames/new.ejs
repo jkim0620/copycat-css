@@ -21,8 +21,10 @@
             <div class="modal-container">
               <button id="closeBtn" class="close-btn">X</button>
               <h2>Ready to post?<span id="cursor">|</span></h2>
-              <input id="title" class="title-input" placeholder="Enter Title" />
-              <button id="saveBtn" class="save-btn" type="button" name="button">SAVE</button>
+              <form type="submit" id="form">
+                <input id="title" class="title-input" type="text" placeholder="Enter Title" />
+                <button id="saveBtn" class="save-btn" type="button" name="button">SAVE</button>
+              </form>
             </div>
           </div>
 
@@ -138,6 +140,7 @@
 
         $('#modalBtn').click(() => {
           $('#modal').fadeIn(200);
+          $('input').focus();
         });
 
         $('#closeBtn').click(() => {
@@ -145,10 +148,7 @@
         });
 
 
-
-
-        // On click on save button new code gets saved to firebase db
-        $('#saveBtn').on('click', (html, css, title) => {
+        function saveData(html, css, title) {
           let titleVal = $('#title').val();
 
           // A frame entry
@@ -167,12 +167,18 @@
 
           // Save new frame with unique key to firebase db and redirect to home page
           return firebase.database().ref().update(updates).then(() => { window.location = '/dashboard' });
+        }
+
+
+        // On click on save button new code gets saved to firebase db
+        $('#saveBtn').on('click', saveData);
+
+        $("#title").keypress((e) => {
+          if (e.keyCode === 13) {
+            saveData();
+          }
+
         });
-        //
-        // $('#saveBtn').on('click', () => {
-        //   let titleVal = $('#title').val();
-        //   console.log(titleVal);
-        // })
 
         $('#cursor').addClass('animated flash');
 
