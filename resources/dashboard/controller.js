@@ -1,5 +1,3 @@
-// const firebase = require('firebase');
-
 let controller = {};
 
 controller.index = (req, res) => {
