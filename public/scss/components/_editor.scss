@@ -10,7 +10,12 @@
 .editor {
   height: 50vh;
   font-size: $base-font-size;
-  // margin-top: -10px;
+}
+
+.firepad {
+  a {
+    display: none;
+  }
 }
 
 .editor-html {
