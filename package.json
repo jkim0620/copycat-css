@@ -25,13 +25,4 @@
     "path": "^0.12.7"
   },
   "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jkim0620/final-project-node.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jkim0620/final-project-node/issues"
-  },
-  "homepage": "https://github.com/jkim0620/final-project-node#readme",
-  "description": ""
 }
