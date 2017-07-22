@@ -42,53 +42,53 @@
   @-webkit-keyframes hvr-icon-wobble-horizontal {
     16.65% {
       -webkit-transform: translateX(6px);
-      transform: translateX(6px);
+      transform: rotate(-45deg) translateX(6px);
     }
     33.3% {
       -webkit-transform: translateX(-5px);
-      transform: translateX(-5px);
+      transform: rotate(-45deg) translateX(-5px);
     }
     49.95% {
       -webkit-transform: translateX(4px);
-      transform: translateX(4px);
+      transform: rotate(-45deg) translateX(4px);
     }
     66.6% {
       -webkit-transform: translateX(-2px);
-      transform: translateX(-2px);
+      transform: rotate(-45deg) translateX(-2px);
     }
     83.25% {
       -webkit-transform: translateX(1px);
-      transform: translateX(1px);
+      transform: rotate(-45deg) translateX(1px);
     }
     100% {
       -webkit-transform: translateX(0);
-      transform: translateX(0);
+      transform: rotate(-45deg) translateX(0);
     }
   }
   @keyframes hvr-icon-wobble-horizontal {
     16.65% {
       -webkit-transform: translateX(6px);
-      transform: translateX(6px);
+      transform: rotate(-45deg) translateX(6px);
     }
     33.3% {
       -webkit-transform: translateX(-5px);
-      transform: translateX(-5px);
+      transform: rotate(-45deg) translateX(-5px);
     }
     49.95% {
       -webkit-transform: translateX(4px);
-      transform: translateX(4px);
+      transform: rotate(-45deg) translateX(4px);
     }
     66.6% {
       -webkit-transform: translateX(-2px);
-      transform: translateX(-2px);
+      transform: rotate(-45deg) translateX(-2px);
     }
     83.25% {
       -webkit-transform: translateX(1px);
-      transform: translateX(1px);
+      transform: rotate(-45deg) translateX(1px);
     }
     100% {
       -webkit-transform: translateX(0);
-      transform: translateX(0);
+      transform: rotate(-45deg) translateX(0);
     }
   }
   .hvr-icon-wobble-horizontal {
@@ -110,6 +110,7 @@
     font-family: FontAwesome;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    transform: rotate(-45deg);
   }
   .hvr-icon-wobble-horizontal:hover:before, .hvr-icon-wobble-horizontal:focus:before, .hvr-icon-wobble-horizontal:active:before {
     -webkit-animation-name: hvr-icon-wobble-horizontal;
