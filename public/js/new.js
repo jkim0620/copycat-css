@@ -1,5 +1,4 @@
-$(document).ready(() => {
-  console.log("Welcome to Julia's final project");
+
 
   // Setting HTML text editor
   let htmlEditor = ace.edit('html-editor');
@@ -13,8 +12,12 @@ $(document).ready(() => {
   cssEditor.getSession().setMode('ace/mode/css');
   // cssEditor.setValue('/* CSS code goes here */');
 
+
+
   // Initializing Firebase, Ace, and Firepad
   // Initialize Firebase.
+  const init = () => {
+
   let config = {
     apiKey: "AIzaSyCip8dLX1XlkNwKsL7YRXP6THfI4F3Zwgk",
     authDomain: "ui-app-50173.firebaseapp.com",
@@ -36,9 +39,14 @@ $(document).ready(() => {
   // Create Firepad.
   let htmlFirepad = Firepad.fromACE(htmlFirepadRef, htmlEditor);
   let cssFirepad = Firepad.fromACE(cssFirepadRef, cssEditor);
+}
 
-  // htmlEditor.setValue('<!-- HTML code goes here -->');
-  // cssEditor.setValue('/* CSS code here */');
+
+$(document).ready(() => {
+  init();
+
+  htmlEditor.session.setValue('<!-- HTML code goes here -->');
+  cssEditor.session.setValue('/* CSS code here */');
 
   // Setting iframe to preview code
   // Reference: https://subinsb.com/how-to-create-a-html-css-js-code-editor-using-jquery
