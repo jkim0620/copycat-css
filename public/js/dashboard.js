@@ -9,7 +9,7 @@ $(document).ready(() => {
     storageBucket: "gs://ui-app-50173.appspot.com",
     messagingSenderId: "518926407264",
   };
-  
+
   firebase.initializeApp(config);
 
   let rootRef = firebase.database().ref().child('frames');
@@ -57,7 +57,7 @@ $(document).ready(() => {
 
       createSrcDoc(newIframe, newSrcDoc);
 
-      $('#frames-container').append(newIframe).append('<div class="desc"><h2>' + frameTitle + '</h2><a href="/frames/' + k + '"><div class="rotate-box"><button class="go-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button></div></a></div>')
+      $('#frames-container').append(newIframe).append('<div class="desc"><h2>' + frameTitle + '</h2><a href="/frames/' + k + '"><div class="rotate-box"><button class="go-btn hvr-icon-wobble-horizontal"></button></div></a></div>')
       // ('<a href="/frames/' + k + '"><button class="link-btn">GO <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>');
       $('iframe').addClass('iframe-thumbnail');
     }

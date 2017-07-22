@@ -7,6 +7,10 @@
   },
   "author": "Julia Kim",
   "license": "ISC",
+  "engines": {
+  	"node": ">=7.9.0"
+  },
+	"engineStrict": true,
   "dependencies": {
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",

@@ -5,11 +5,13 @@ $(document).ready(() => {
   let htmlEditor = ace.edit('html-editor');
   htmlEditor.setTheme('ace/theme/twilight');
   htmlEditor.getSession().setMode('ace/mode/html');
+  // htmlEditor.setValue('<!-- HTML code goes here -->');
 
   // Setting CSS text editor
   let cssEditor = ace.edit('css-editor');
   cssEditor.setTheme('ace/theme/twilight');
   cssEditor.getSession().setMode('ace/mode/css');
+  // cssEditor.setValue('/* CSS code goes here */');
 
   // Initializing Firebase, Ace, and Firepad
   // Initialize Firebase.
