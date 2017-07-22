@@ -110,7 +110,7 @@ $(document).ready(() => {
     updates['/frames/' + newFrameKey] = frameData;
 
     // Save new frame with unique key to firebase db and redirect to home page
-    return firebase.database().ref().update(updates).then(() => { window.location = '/dashboard' });
+    return firebase.database().ref().update(updates).then(() => { window.location = '/' });
   }
 
 
