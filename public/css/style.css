@@ -65,7 +65,7 @@ a:hover {
   border-bottom-left-radius: 4px;
   color: white;
   padding: 10px 60px 10px 60px;
-  text-align: justify;
+  text-align: left;
   margin-top: -10px;
   margin-bottom: 50px; }
   .desc h2 {
@@ -73,6 +73,14 @@ a:hover {
     color: #1e2430;
     font-weight: 600; }
 
+@media (max-width: 650px) {
+  .frames-container {
+    width: 90%; }
+
+  .desc {
+    padding-left: 20px; }
+    .desc h2 {
+      font-size: 25px; } }
 .footer-section {
   width: 100%;
   background: linear-gradient(180deg, #1e2430, #303a4c); }
@@ -129,6 +137,18 @@ a:hover {
 .gif {
   margin-top: 80px; }
 
+@media (max-width: 650px) {
+  .type-writer h1 {
+    font-size: 40px; }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0; }
+    to {
+      width: 100%; } }
+  .header-container {
+    height: 100vh; } }
 .nav-section {
   position: fixed;
   top: 0;
@@ -151,6 +171,14 @@ a:hover {
     margin: 0;
     margin-left: 20px; }
 
+@media (max-width: 650px) {
+  .nav-section ul {
+    padding: 0; }
+  .nav-section button {
+    margin-left: 0; }
+  .nav-section i {
+    margin-left: 5px;
+    margin-top: 0; } }
 .save-btn, .export-btn, .new-btn, .go-btn, .modal-btn {
   border: none;
   background: #ffffff;
@@ -239,10 +267,25 @@ a:hover {
   height: 70px;
   margin-top: -30px; }
 
-.editor-container .col-sm-4 {
-  padding: 0; }
-.editor-container .col-sm-8 {
-  padding: 0; }
+@media (max-width: 650px) {
+  .main-new-btn {
+    border-width: 2px;
+    font-size: 10px;
+    width: auto;
+    height: 32px;
+    padding: 2px 7px; }
+
+  .rotate-box {
+    margin-left: 70%; }
+
+  .home-btn {
+    margin-left: 20px; } }
+.editor-container {
+  padding-left: 0; }
+  .editor-container .col-sm-4 {
+    padding: 0; }
+  .editor-container .col-sm-8 {
+    padding: 0; }
 
 .editor {
   height: 50vh;
@@ -266,7 +309,7 @@ a:hover {
     float: right; }
 
 .iframe-container {
-  padding-top: 100px;
+  padding-top: 5px;
   background: #d9d9d9;
   height: 100vh; }
 
@@ -297,6 +340,10 @@ a:hover {
   overflow: scroll;
   display: inline; }
 
+@media (max-width: 650px) {
+  .iframe-bg {
+    border: #0b0b0b solid 15px;
+    width: 90%; } }
 .modal-wrapper {
   position: fixed;
   top: 0;

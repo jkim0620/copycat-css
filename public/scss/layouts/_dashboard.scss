@@ -31,7 +31,20 @@
   border-bottom-left-radius: 4px;
   color: white;
   padding: 10px 60px 10px 60px;
-  text-align: justify;
+  text-align: left;
   margin-top: -10px;
   margin-bottom: 50px;
+}
+
+@media (max-width: 650px) {
+  .frames-container {
+    width: 90%;
+  }
+
+  .desc {
+    h2 {
+      font-size: 25px;
+    }
+    padding-left: 20px;
+  }
 }

@@ -52,3 +52,25 @@
 .gif {
   margin-top: 80px;
 }
+
+
+// Media query for small device
+@media (max-width: 650px) {
+  .type-writer {
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  .header-container {
+    height: 100vh;
+  }
+
+
+}

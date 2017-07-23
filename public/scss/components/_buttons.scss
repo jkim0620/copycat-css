@@ -103,17 +103,22 @@
   width: 70px;
   height: 70px;
   margin-top: -30px;
-  // transform: rotate(-45deg);
-  // border-radius: 50%;
-  // i {
-  //   margin-top: 10px;
-  //   margin-left: 10px;
-  //   // font-weight: bold;
-  //   font-size: 1.5em;
-  // }
-  // &:hover {
-  //   i {
-  //     color: $blue;
-  //   }
-  // }
+}
+
+@media (max-width: 650px) {
+  .main-new-btn {
+    border-width: 2px;
+    font-size: 10px;
+    width: auto;
+    height: 32px;
+    padding: 2px 7px;
+  }
+
+  .rotate-box {
+    margin-left: 70%;
+  }
+
+  .home-btn {
+    margin-left: 20px;
+  }
 }

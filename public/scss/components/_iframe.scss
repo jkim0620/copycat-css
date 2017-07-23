@@ -1,5 +1,5 @@
 .iframe-container {
-  padding-top: 100px;
+  padding-top: 5px;
   background: $dove;
   height: 100vh;
 }
@@ -32,4 +32,11 @@
   background: white;
   overflow: scroll;
   display: inline;
+}
+
+@media (max-width: 650px) {
+  .iframe-bg {
+    border: $black solid 15px;
+    width: 90%;
+  }
 }
