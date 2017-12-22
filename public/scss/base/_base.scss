@@ -1,3 +1,9 @@
+* {
+  &:focus {
+    outline: none;
+  }
+}
+
 body {
   // font-family: $font-choice-5;
   font-family: $primary-font-family;

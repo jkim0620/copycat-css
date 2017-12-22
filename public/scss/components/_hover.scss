@@ -2,6 +2,7 @@
 .hvr-sweep-to-right {
   display: inline-block;
   vertical-align: middle;
+  // background: $white;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px transparent;
@@ -19,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: $blue;
+  background: $extra-light-gray;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -32,7 +33,7 @@
   transition-timing-function: ease-out;
 }
 .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
-  color: white;
+  color: $editor-bg-gray;
 }
 .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
   -webkit-transform: scaleX(1);
@@ -146,7 +147,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: $blue;
+  background: $extra-light-gray;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
@@ -159,7 +160,7 @@
   transition-timing-function: ease-out;
 }
 .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
-  color: white;
+  color: $editor-bg-gray;
 }
 .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
   -webkit-transform: scaleX(1);

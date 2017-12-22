@@ -1,13 +1,27 @@
-.save-btn, .export-btn, .new-btn, .go-btn, .modal-btn {
+.save-btn, .export-btn, .new-btn, .modal-btn {
+  border: none;
+  background: $dove;
+  color: $editor-bg-gray-shadow;
+  border: $editor-bg-gray-shadow 2px solid;
+  border-radius: 3px;
+  padding: 5px 10px;
+  float: right;
+  margin-right: 30px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.go-btn {
   border: none;
   background: $white;
-  color: $blue;
-  border: $blue 3px solid;
+  color: $editor-bg-gray-shadow;
+  border: $editor-bg-gray-shadow 3px solid;
   border-radius: 4px;
   padding: 7px 12px;
   float: left;
   margin-left: 30px;
   margin-top: 20px;
+  font-size: 14px;
 }
 
 // .save-btn, .export-btn, .new-btn, .modal-btn {
@@ -19,18 +33,21 @@
 
 .save-btn {
   float: none;
+  border-color: $white;
+  margin-left: 10px;
+  // padding: 10px;
 }
 
 .close-btn {
   position: relative;
-  top: -50px;
-  left: 57%;
+  top: -24px;
+  left: 52%;
   width: 35px;
   height: 35px;
   border-radius: 50%;
   border: none;
-  background: $blue;
-  color: $white;
+  background: none;
+  color: $dove;
   font-family: $secondary-font-family;
   font-size: 20px;
   font-weight: bold;
@@ -38,14 +55,14 @@
 
 .main-new-btn {
   background: transparent;
-  color: $dove;
-  border: $dove 3px solid;
+  color: $editor-bg-gray;
+  border: $editor-bg-gray 2px solid;
   float: none;
   width: auto;
   height: 35px;
   font-size: 12px;
   padding: 3px 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   letter-spacing: 2px;
 }
 
@@ -64,8 +81,7 @@
 
 .main-new-btn:hover {
   background: $dove;
-  color: $blue;
-  font-weight: bold;
+  border-color: $dove;
 }
 
 .main-home-btn, .home-btn {
@@ -106,6 +122,16 @@
 }
 
 @media (max-width: 650px) {
+  .export-btn, .new-btn, .modal-btn, .main-new-btn {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 15px;
+  }
+
+  .main-new-btn {
+    height: 28px;
+  }
+
   .rotate-box {
     margin-left: 70%;
   }

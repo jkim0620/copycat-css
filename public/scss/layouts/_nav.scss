@@ -5,8 +5,7 @@
   width: 100%;
   height: auto;
   padding: 10px 0 8px 0;
-  background: $blue;
-  box-shadow: 2px 2px 8px $editor-bg-gray;
+  background: $white;
   z-index: 1000;
   ul {
     margin: 0;
@@ -17,11 +16,26 @@
   }
   button {
     margin: 0;
-    margin-left: 80%;
+    margin-left: 65%;
   }
   i {
     margin: 0;
     margin-left: 20px;
+  }
+}
+
+.logo {
+  width: 150px;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  margin-left: 20px;
+}
+
+@media (max-width: 950px) {
+  .nav-section {
+    button {
+      margin-left: 0;
+    }
   }
 }
 
@@ -37,5 +51,9 @@
       margin-left: 5px;
       margin-top: 0;
     }
+  }
+
+  .logo {
+    width: 120px;
   }
 }

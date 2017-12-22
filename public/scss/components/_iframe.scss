@@ -2,12 +2,15 @@
   padding-top: 5px;
   background: $dove;
   height: 100vh;
+  .logo {
+    margin-left: 30px;
+  }
 }
 
 .iframe-bg {
   border: $black solid 20px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 70px;
   border-radius: 10px;
   width: 80%;
   height: 70%;
@@ -37,6 +40,6 @@
 @media (max-width: 650px) {
   .iframe-bg {
     border: $black solid 15px;
-    width: 90%;
+    width: 85%;
   }
 }
