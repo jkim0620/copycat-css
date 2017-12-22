@@ -45,10 +45,13 @@ a:hover {
   padding: 0; }
 
 .blue-font {
-  color: #0283ce; }
+  color: #1BC9EA; }
 
 .green-font {
   color: #42f4ce; }
+
+.gray-font {
+  color: #BCBABA; }
 
 .content-section {
   background: #1e2430;
@@ -113,7 +116,7 @@ a:hover {
 .header-container {
   height: 800px;
   text-align: center;
-  padding-top: 180px;
+  padding-top: 200px;
   margin: 0 auto; }
 
 .intro {
@@ -187,10 +190,10 @@ a:hover {
     margin-left: 20px; }
 
 .logo {
-  width: 150px;
+  width: 120px;
   margin-top: 20px;
   padding-bottom: 15px;
-  margin-left: 20px; }
+  margin-left: 40px; }
 
 @media (max-width: 950px) {
   .nav-section button {
@@ -229,6 +232,10 @@ a:hover {
   margin-left: 30px;
   margin-top: 20px;
   font-size: 14px; }
+
+.save-btn:hover, .export-btn:hover, .new-btn:hover, .modal-btn:hover {
+  background: #BCBABA;
+  border-color: #BCBABA; }
 
 .save-btn {
   float: none;
@@ -355,7 +362,8 @@ a:hover {
   background: #d9d9d9;
   height: 100vh; }
   .iframe-container .logo {
-    margin-left: 30px; }
+    margin-left: 30px;
+    width: 100px; }
 
 .iframe-bg {
   border: #0b0b0b solid 20px;
@@ -410,7 +418,7 @@ a:hover {
   .modal-container h2 {
     font-family: "Quicksand", "sans-serif";
     font-weight: 300;
-    color: #89F8EA;
+    color: #1BC9EA;
     margin-top: 0; }
 
 #cursor {

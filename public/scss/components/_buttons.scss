@@ -24,18 +24,17 @@
   font-size: 14px;
 }
 
-// .save-btn, .export-btn, .new-btn, .modal-btn {
-//   &:hover {
-//     background: $blue;
-//     color: $white;
-//   }
-// }
+.save-btn, .export-btn, .new-btn, .modal-btn {
+  &:hover {
+    background: #BCBABA;
+    border-color: #BCBABA;
+  }
+}
 
 .save-btn {
   float: none;
   border-color: $white;
   margin-left: 10px;
-  // padding: 10px;
 }
 
 .close-btn {
