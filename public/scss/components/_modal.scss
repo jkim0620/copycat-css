@@ -55,7 +55,9 @@
 }
 
 @media (max-width: 650px) {
-  // .title-input {
-  //   margin-bottom: 0;
-  // }
+  .modal-container {
+    h2 {
+      font-size: 22px;
+    }
+  }
 }
